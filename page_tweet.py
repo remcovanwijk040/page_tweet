@@ -14,7 +14,7 @@ import os
 
 # Access the API key from the environment variable
 # api_key = os.getenv("XAI_API_KEY")
-api_key = st.secrets["XAI_API_KEY"]
+#api_key = st.secrets["XAI_API_KEY"]
 fetcher = LinkContentFetcher()
 converter = HTMLToDocument()
 prompt_template = """
@@ -41,7 +41,8 @@ Eindig met {{link}}
 prompt_builder = PromptBuilder(template=prompt_template)
 
 llm = OpenAIGenerator(
-    api_key=Secret.from_env_var("XAI_API_KEY"),
+    #api_key=Secret.from_env_var("XAI_API_KEY"),
+    api_key=st.secrets["XAI_API_KEY"]
     api_base_url="https://api.x.ai/v1",
     model="grok-beta",
 )
