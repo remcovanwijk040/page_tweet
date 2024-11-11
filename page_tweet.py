@@ -6,14 +6,9 @@ from haystack.components.fetchers import LinkContentFetcher
 from haystack.components.converters import HTMLToDocument
 from haystack.components.builders import PromptBuilder
 from haystack.components.generators import OpenAIGenerator
-
-# from dotenv import load_dotenv
 import os
 
-# load_dotenv()  # Load environment variables from .env file
-
 # Access the API key from the environment variable
-# api_key = os.getenv("XAI_API_KEY")
 api_st = st.secrets["XAI_API_KEY"]
 
 fetcher = LinkContentFetcher()
@@ -60,12 +55,12 @@ pipeline.connect("converter.documents", "prompt.documents")
 pipeline.connect("prompt.prompt", "llm.prompt")
 
 
-url = "https://techcrunch.com/2024/11/08/chatgpt-told-2m-people-to-get-their-election-news-elsewhere-and-rejected-250k-deepfakes/"
+# url = "https://techcrunch.com/2024/11/08/chatgpt-told-2m-people-to-get-their-election-news-elsewhere-and-rejected-250k-deepfakes/"
 
-result = pipeline.run({"fetcher": {"urls": [url]},
-                       "prompt": {"link": [url]}})
+# result = pipeline.run({"fetcher": {"urls": [url]},
+#                        "prompt": {"link": [url]}})
 
-print(result["llm"]["replies"][0])
+# print(result["llm"]["replies"][0])
 
 st.title("Social Media Post Generator")
 
