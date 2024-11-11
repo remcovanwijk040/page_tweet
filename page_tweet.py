@@ -7,7 +7,7 @@ from haystack.components.converters import HTMLToDocument
 from haystack.components.builders import PromptBuilder
 from haystack.components.generators import OpenAIGenerator
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
 # load_dotenv()  # Load environment variables from .env file
@@ -15,7 +15,7 @@ import os
 # Access the API key from the environment variable
 # api_key = os.getenv("XAI_API_KEY")
 api_key_st = st.secrets["XAI_API_KEY"]
-
+st.write("API Key:", st.secrets["XAI_API_KEY"])
 
 fetcher = LinkContentFetcher()
 converter = HTMLToDocument()
