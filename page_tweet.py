@@ -14,7 +14,7 @@ import os
 
 # Access the API key from the environment variable
 # api_key = os.getenv("XAI_API_KEY")
- api_key_st = st.secrets["XAI_API_KEY"]
+api_key_st = st.secrets["XAI_API_KEY"]
 fetcher = LinkContentFetcher()
 converter = HTMLToDocument()
 prompt_template = """
