@@ -42,7 +42,7 @@ prompt_builder = PromptBuilder(template=prompt_template)
 
 llm = OpenAIGenerator(
     #api_key=Secret.from_env_var("XAI_API_KEY"),
-    api_key=api_key_st,
+    api_key=Secret(api_key_st),
     api_base_url="https://api.x.ai/v1",
     model="grok-beta",
 )
